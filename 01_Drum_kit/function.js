@@ -1,4 +1,4 @@
-const pressKey = event => {
+function pressKey(event) {
     let sound = document.querySelector(`audio[data-key="${event.keyCode}"`);
     if (!sound) return;
     sound.currentTime = 0;
@@ -8,13 +8,13 @@ const pressKey = event => {
     box.classList = "key playing";
 }
 
-const resetBox = event => {
-    if (event.propertyName !== 'transform') return;
-    this.classList = 'key';
+function resetBox(event) {
+    if (event.propertyName !== "transform") return;
+    this.className = "key";
 }
 
 
 window.addEventListener("keydown", pressKey)
 
-const keys = Array.from(document.getElementsByClassName("keys"));
+const keys = document.querySelectorAll('.key');
 keys.forEach(event => addEventListener("transitionend", resetBox));
