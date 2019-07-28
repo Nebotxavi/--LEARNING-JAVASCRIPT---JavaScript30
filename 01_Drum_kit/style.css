@@ -11,11 +11,13 @@ body, html {
 }
 
 .keys {
-    display: flex;
-    flex: 1;
-    min-height:90vh;
-    align-items: center;
-    justify-content: center;
+    margin: 470px 130px;
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 10px;
 }
 
 .key {
