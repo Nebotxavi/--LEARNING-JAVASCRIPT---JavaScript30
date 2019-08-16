@@ -111,22 +111,22 @@
                         if (i['classList'] == 'lastOne' || i['classList'] == 'newOne') {
                             activationFlag = (activationFlag) ? false : true;
                             check = (this.checked) ? true : false;
-                            i.checked = check
+                            i.checked = check;
                         }
                         if (activationFlag) {
-                            i.checked = check
+                            i.checked = check;
                         }
                     }
                 }
             }
 
-            checkbox.forEach(i => i['classList'].remove('lastOne'))
-            this['classList'] = 'lastOne'
+            checkbox.forEach(i => i['classList'].remove('lastOne'));
+            this['classList'] = 'lastOne';
 
 
         }
 
-        let checkbox = document.querySelectorAll('input')
+        let checkbox = document.querySelectorAll('input');
 
         checkbox.forEach(i => i.addEventListener('click', selector));
 
