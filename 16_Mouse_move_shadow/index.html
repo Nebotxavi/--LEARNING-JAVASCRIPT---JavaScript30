@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Shadow</title>
+</head>
+
+<body>
+
+  <div class="hero">
+    <h1 id='textField'>🔥WOAH!</h1>
+  </div>
+
+  <style>
+    html {
+      color: black;
+      font-family: sans-serif;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+    }
+
+    h1 {
+      text-shadow: 0px 00px 10px rgba(0, 0, 0, 1);
+      font-size: 100px;
+    }
+  </style>
+
+  <script>
+
+    function positionDetector(e) {
+      let YCenter = window.innerHeight / 2 - e.clientY;
+      let XCenter = window.innerWidth / 2 - e.clientX;
+
+      let shadowY = (YCenter < 100 && YCenter > -100) ? YCenter : (YCenter < 0) ? -100 : 100;
+      let shadowX = (XCenter < 100 && XCenter > -100) ? XCenter : (XCenter < 0) ? -100 : 100;
+
+
+      const textShadowItem = document.getElementById('textField')
+
+      textShadowItem.style.textShadow = `
+         ${shadowX}px ${shadowY}px 7px rgba(0,0,0,1),
+         ${shadowX * -1}px ${shadowY}px 7px rgba(100,0,0,1),
+         ${shadowY}px ${shadowX * -1}px 7px rgba(0,100,0,1),
+         ${shadowY * -1}px ${shadowX}px 7px rgba(0,0,100,1)
+         `
+
+    }
+
+    window.addEventListener('mousemove', positionDetector)
+
+  </script>
+</body>
+
+</html>
